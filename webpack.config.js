@@ -29,5 +29,22 @@ module.exports = {
 		open: true,//自动打开浏览器
 		hot: true//启用热更新
 	},
-	plugins: [htmlPlugin]  //通过 plugins 节点，使 htmlPlugin 插件生效
+	plugins: [htmlPlugin],  //通过 plugins 节点，使 htmlPlugin 插件生效
+	module: {
+		rules: [
+			//定义了不同模块对应的loader
+			{
+				test: /\.css$/,use: ['style-loader','css-loader']
+			},
+			{
+				test: /\.less$/,use: ['style-loader','css-loader','less-loader']
+			},
+			{
+				test: /\.jpg|png|gif$/,use: ['url-loader?limit-20000']
+			},
+			{
+				test: /\.js$/,use: ['babel-loader'],exclude: /node_modules/
+			}
+		]
+	}
 }
