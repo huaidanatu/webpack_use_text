@@ -1,6 +1,6 @@
 //1.使用ES6导入语法导入jQuery
 import $ from "jquery"
-import '../css/index.css'
+import '@/css/index.css'
 import '../css/index.less'
 import logo from '../images/logo.jpg'
 
